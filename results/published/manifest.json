@@ -1,0 +1,98 @@
+{
+  "project": "mean-field-execution",
+  "package_version": "0.1.0",
+  "profile": "full",
+  "seed": 20261117,
+  "trials": 512,
+  "population_repeats": 128,
+  "sensitivity_trials": 64,
+  "config": {
+    "steps": 40,
+    "horizon": 1.0,
+    "permanent_impact": 0.08,
+    "volatility": 0.12,
+    "negative_drift": -0.18,
+    "positive_drift": 0.18,
+    "switching_rate": 0.8,
+    "initial_positive_probability": 0.5,
+    "initial_price": 100.0
+  },
+  "agent_types": [
+    {
+      "name": "patient",
+      "weight": 0.45,
+      "initial_inventory": 1.0,
+      "temporary_impact": 0.035,
+      "inventory_penalty": 0.012,
+      "terminal_penalty": 2.0,
+      "hard_liquidation": false
+    },
+    {
+      "name": "balanced",
+      "weight": 0.35,
+      "initial_inventory": 1.15,
+      "temporary_impact": 0.045,
+      "inventory_penalty": 0.06,
+      "terminal_penalty": 2.0,
+      "hard_liquidation": false
+    },
+    {
+      "name": "urgent",
+      "weight": 0.2,
+      "initial_inventory": 0.8,
+      "temporary_impact": 0.055,
+      "inventory_penalty": 0.22,
+      "terminal_penalty": 2.0,
+      "hard_liquidation": false
+    }
+  ],
+  "strategies": [
+    "twap",
+    "ac",
+    "filtered_mfg",
+    "full_info_mfg",
+    "naive_filter_mfg",
+    "misspecified_mfg",
+    "blind_mfg"
+  ],
+  "data_type": "synthetic; no empirical market data or calibration",
+  "timestamp_utc": "2026-11-18T05:01:16.530077+00:00",
+  "runtime_seconds": 48.774990792007884,
+  "python": "3.12.6",
+  "platform": "macOS-27.2-arm64-arm-64bit",
+  "numpy": "2.5.5",
+  "scipy": "1.18.1",
+  "pandas": "3.1.1",
+  "source_sha256": {
+    "__init__.py": "0469e9def874f4694281b644688f9e666d7b44da01e4107c917a094ac1aa5903",
+    "__main__.py": "11cf323249f4ba4e79c9fb7660c0979fc91a3822bc5362286376b69808b41195",
+    "cli.py": "890dfd11d89192f1d50f6f8d129679e16aa1b3aee29688b73cd0eb4816de66f1",
+    "config.py": "10deb3478d26d11a6b269f8b74e191d561ab41b17bbd9549080ca31325be309e",
+    "equilibrium.py": "7aac30404ba53d5139ed970caf1ac1e3b2cc12f6e2c9c844c622a8affde50ceb",
+    "experiments.py": "48a8a18e1730742c59313ad3d648811c1e73cff6cebabf5ef5a72efcf523908f",
+    "filtering.py": "0895f5e5e31c8caf3c0aa39fdc356d651bd5b946a5d32ced7ef87cf64d165f94",
+    "optimization.py": "893c729f14368325a2c8978e832837a23b751c72c215c8e6d202a471863b8158",
+    "plotting.py": "96b11d23a02d782206304ab02dd6647a3a4df4cd9cea798669db287dc8bc2ceb",
+    "population.py": "ab0b17fc13240b68e3bb0a4c572f34c5f401b50d0c2cc800434bcdf22960d4f6",
+    "simulation.py": "a8f7e940a32a90790389562e2678a0212b859b20081a81aed89be23994b9784c",
+    "statistics.py": "30405fdc18778cbb74b57ba7e103149330cbe0886beb78697f6333467c27183b"
+  },
+  "confidence_interval": "two-sided 95% Student t across independent path seeds",
+  "seed_scheme": "SeedSequence([root_seed, study_stream]).spawn(n); uint32 path seed",
+  "artifact_sha256": {
+    "convergence_history.csv": "5f1cdacd957e5b887bdf86b38f8d54aa21c0f9489743b09448e59868f61f969a",
+    "convergence_summary.csv": "3e7a576296c15a29c119ca47c28dcbae488dc65903fc21ebf9a2219dadc4dca5",
+    "example_paths.npz": "10f0404e7016ae37a8feb726211f8155717d360d81b161959baa75e9af147a94",
+    "figures/equilibrium_convergence.png": "2e6d7ef0684ede07aa428f3a8543863ce719eb83fd8ce7390f59201479fa1bd6",
+    "figures/execution_path.png": "601d13905eb581a24b29f2983b303f039712eb96b7fcedcd7286b04f203bbe5c",
+    "figures/filter_diagnostics.png": "0f94ca944815cc206993f82499f48dfa7cf17f7367fbb7959ddecb3dfab0309b",
+    "figures/finite_population.png": "79a5597b69d19e7074786e9af323e28fe190d383d1b95d300d5845566dbe9d1e",
+    "figures/policy_comparison.png": "9d58fba961334ce45d4babd08c532aa684a0bb9ec835af8a6be3dbce469f2973",
+    "figures/sensitivity.png": "766026562644869a58810884a4b3361dffc6d16b269e4451130d408bbaef47d3",
+    "finite_population.csv": "913e7d98f1df4e606514cdb291f47d20f9bbe1511c34b5d96e2b7ae8c4bc0353",
+    "report.md": "e549074fa327b43fb0b0f6a4ab449f45590ec0dd8adaf870001425fc4d03b19d",
+    "sensitivity.csv": "ba0e9eef03214ecf0cc1b1f9d0cc5797f477312af60b9f50e2b04fa78ad376bd",
+    "summary.csv": "4c10811f96a82903c366e4745ea055a3eb1fb7df9fc4bcab0215c5a1419d7b3e",
+    "trials.csv": "87ada57400781e7ec8a8890d7f56dd78b62d59a65fb57ed0e144dc182f7a72f6"
+  }
+}

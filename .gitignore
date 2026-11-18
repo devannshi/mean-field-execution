@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mplconfig/
+.ipynb_checkpoints/
+.DS_Store
+build/
+dist/
+results/quick/
+results/reproduced/
+.write-check
+

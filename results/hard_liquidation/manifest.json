@@ -1,0 +1,74 @@
+{
+  "seed_base": 510000,
+  "trials": 512,
+  "config": {
+    "steps": 40,
+    "horizon": 1.0,
+    "permanent_impact": 0.08,
+    "volatility": 0.12,
+    "negative_drift": -0.18,
+    "positive_drift": 0.18,
+    "switching_rate": 0.8,
+    "initial_positive_probability": 0.5,
+    "initial_price": 100.0
+  },
+  "types": [
+    {
+      "name": "patient",
+      "weight": 0.45,
+      "initial_inventory": 1.0,
+      "temporary_impact": 0.035,
+      "inventory_penalty": 0.012,
+      "terminal_penalty": 0,
+      "hard_liquidation": true
+    },
+    {
+      "name": "balanced",
+      "weight": 0.35,
+      "initial_inventory": 1.15,
+      "temporary_impact": 0.045,
+      "inventory_penalty": 0.06,
+      "terminal_penalty": 0,
+      "hard_liquidation": true
+    },
+    {
+      "name": "urgent",
+      "weight": 0.2,
+      "initial_inventory": 0.8,
+      "temporary_impact": 0.055,
+      "inventory_penalty": 0.22,
+      "terminal_penalty": 0,
+      "hard_liquidation": true
+    }
+  ],
+  "constraint": "dt*sum(rate)=initial inventory",
+  "max_terminal_inventory_rms": 6.397344083151129e-18,
+  "max_accounting_error": 1.6478485242998886e-13,
+  "runtime_seconds": 21.585964458005037,
+  "timestamp_utc": "2026-11-18T05:00:50.176623+00:00",
+  "python": "3.12.6",
+  "numpy": "2.5.5",
+  "scipy": "1.18.1",
+  "pandas": "3.1.1",
+  "source_hashes": {
+    "src/meanfield_execution/__init__.py": "0469e9def874f4694281b644688f9e666d7b44da01e4107c917a094ac1aa5903",
+    "src/meanfield_execution/__main__.py": "11cf323249f4ba4e79c9fb7660c0979fc91a3822bc5362286376b69808b41195",
+    "src/meanfield_execution/cli.py": "890dfd11d89192f1d50f6f8d129679e16aa1b3aee29688b73cd0eb4816de66f1",
+    "src/meanfield_execution/config.py": "10deb3478d26d11a6b269f8b74e191d561ab41b17bbd9549080ca31325be309e",
+    "src/meanfield_execution/equilibrium.py": "7aac30404ba53d5139ed970caf1ac1e3b2cc12f6e2c9c844c622a8affde50ceb",
+    "src/meanfield_execution/experiments.py": "48a8a18e1730742c59313ad3d648811c1e73cff6cebabf5ef5a72efcf523908f",
+    "src/meanfield_execution/filtering.py": "0895f5e5e31c8caf3c0aa39fdc356d651bd5b946a5d32ced7ef87cf64d165f94",
+    "src/meanfield_execution/optimization.py": "893c729f14368325a2c8978e832837a23b751c72c215c8e6d202a471863b8158",
+    "src/meanfield_execution/plotting.py": "96b11d23a02d782206304ab02dd6647a3a4df4cd9cea798669db287dc8bc2ceb",
+    "src/meanfield_execution/population.py": "ab0b17fc13240b68e3bb0a4c572f34c5f401b50d0c2cc800434bcdf22960d4f6",
+    "src/meanfield_execution/simulation.py": "a8f7e940a32a90790389562e2678a0212b859b20081a81aed89be23994b9784c",
+    "src/meanfield_execution/statistics.py": "30405fdc18778cbb74b57ba7e103149330cbe0886beb78697f6333467c27183b",
+    "scripts/hard_liquidation_study.py": "6f1cce07bbf12cbfb4716c4faa488488f9a70a01324253c33eb8383138d59d5a"
+  },
+  "artifact_sha256": {
+    "REPORT.md": "eb998f1ed9a266259228a8e5fb92faf30be7e46a08954b5f26679ff6b9ab372c",
+    "equal_completion.png": "81ec56c57350c54685aae93fef9bbc511207ef6bddb324c0fc5e14c77bcaec8e",
+    "summary.csv": "96f1556ff928969781a287674417cb89e2e6eba69e8a4a64db170afecea1270c",
+    "trials.csv": "d310e03e61f52e417ccb5f5c2b07e3b428aa9ec5339823b5b9eb6f85b0356bf2"
+  }
+}
